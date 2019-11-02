@@ -22,6 +22,7 @@ void display(void);
 
 int main()
 {
+while(1)
 	head=NULL; // here we making our list empty
 	int choice;
 	while(1)
@@ -56,7 +57,7 @@ int main()
 }
 
 
-void insert_beg()
+void insert_beg() 
 {
 	int x=0;
 	struct node* ptr;
@@ -133,7 +134,7 @@ void insert_nth()
 
 	if(ptr==NULL)
 	{
-		printf("Warning : Memory is full !!");
+		printf("Warning : Memory is full !!\n");
 	}
 	
 	if(n==1)
@@ -155,7 +156,7 @@ void insert_nth()
 		ptr->data=x;
 		temp2=temp1->next;
 		ptr->next=temp2;
-		temp1->next=ptr;git tutorial in hindi
+		temp1->next=ptr;
 		
 	}
 	
@@ -168,10 +169,11 @@ void delete_beg()
 	temp=head;
 	if(temp==NULL)
 	{
-		printf("List is empty");
+		printf("List is empty\n");
 	}
 	else
 	{
+		printf("The deleted Element is : %d",temp->data);
 		head=temp->next;
 		free(temp);
 	}
@@ -181,48 +183,54 @@ void delete_beg()
 
 void delete_end()
 {
-		struct node* temp;.
-		temp=head;
+		struct node *temp1,*temp2;
+		int n,i;
+		temp1=head;
 		if(head==NULL)
 		{
-			printf("List is Empty nothing to delete");
+			printf("List is Empty nothing to delete\n");
 		}
 		else
 		{
-			while(temp->next!=NULL)
+			temp1=head;
+			for(i=1;i<n-1;i++)
 			{
-				temp=temp->next;
+				temp1=temp1->next;
 			}
-			
+			temp2=temp1->next;
+			printf("The Deleted element is : %d\n",temp2->data);			
+			temp1->next=NULL;
+			free(temp2);
 		}
 	
 }
+
 
 void delete_nth()
 {
 	struct node *temp1,*temp2; 
-	int n;
-	printf("from which position do you what to remove the element");
+	int n,i;
+	printf("from which position do you what to remove the element\n");
 	scanf("%d",&n);
-	while(temp->next!=NULL)
+		if(head==NULL)
+		{
+			printf("Nothing to delete");
+		}
+		else
+		{
+
+			temp1=head;
+			for(i=1;i<n-1;i++)
 			{
 				temp1=temp1->next;
 			}
-	
-	
+			temp2=temp1->next;
+			printf("The Deleted element is : %d\n",temp2->data);	
+			temp1->next=temp2->next;
+			free(temp2);	
+
+		}
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -231,25 +239,14 @@ void display()
 	struct node * temp;
 	temp=head;
 	printf("\n##########################\n\n");
+
 	while(temp!=NULL)
 	{
 		printf("Element is : %d\n",temp->data);
 		temp=temp->next;
 	}
+
 	printf("\n##########################\n");
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
