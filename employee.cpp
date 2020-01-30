@@ -8,7 +8,7 @@ using namespace std;
 class employee {
     private :
         string name;
-        int age;
+        int ID;
         double basic_salary;
         double gross_salary;
         double DA;
@@ -23,8 +23,8 @@ void employee::read()
 {
     cout<<"Enter the name of the employee\n";
     cin>>name;
-    cout<<"Enter age of the employee\n";
-    cin>>age;
+    cout<<"Enter employee ID\n";
+    cin>>ID;
     cout<<"Enter the basic salary (in Rupees)\n";
     cin>>basic_salary;
 
@@ -39,7 +39,7 @@ void employee::calc()
 void employee::display()
 {
     cout<<"\nNAME :"<<name<<endl;
-    cout<<"Age :"<<age<<endl;
+    cout<<"ID :"<<ID<<endl;
     cout<<"Basic Salary(in Rupees): "<<basic_salary<<endl;
     cout<<"DA(in Rupees): "<<DA<<endl;
     cout<<"IT(in Rupees): "<<IT<<endl;
